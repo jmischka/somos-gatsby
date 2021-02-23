@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 /**
  * Configure your Gatsby site with this file.
  *
@@ -6,5 +8,20 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  siteMetadata: {
+    title: `SOMOS HOSPITALITY`,
+    description: `Somos Hospitality is a service that...`,
+  },
+  plugins: [
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: 'e9ry6f22',
+        dataset: 'production',
+        // a token with read permissions is required
+        // if you have a private dataset
+        token: process.env.SANITY_TOKEN,
+      },
+    },
+  ],
 }
