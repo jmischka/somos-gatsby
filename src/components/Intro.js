@@ -2,6 +2,7 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image";
 import styled from 'styled-components';
+import backgroundpattern from '../assets/Pattern_lg.jpg'
 
 const SectionStyles = styled.section `
 div.section-container {
