@@ -9,6 +9,23 @@ div.section-container {
   z-index: 3;
 }
 
+.somos-branding {
+  display: block;
+  position: absolute;
+  margin: 0 0 0 0;
+  left: 0;
+  bottom: 0;
+  width: calc((100% / 12) * 4);
+  height: auto;
+}
+
+.somos-branding img {
+  position: relative;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: auto;
+}
+
 div.section-textbox {
   position: absolute;
   margin: 0 0 0 0;
@@ -106,6 +123,9 @@ export default function Intro() {
   return (
     <SectionStyles>
       <div className="section-container">
+        <figure className="somos-branding">
+          <img alt="Somos branding" src={backgroundpattern} />
+        </figure>
         <div className="section-textbox">
           <h1>{data.allSanityFrontpageSection.nodes[0].frontpageIntroduction[0]._rawChildren[0].text}</h1>
           <p>{data.allSanityFrontpageSection.nodes[0].frontpageIntroduction[0]._rawChildren[1].text}</p>

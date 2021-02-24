@@ -96,6 +96,7 @@ const SectionStyles = styled.section `
     font-size: 1.6em;
     line-height: 1.3;
     font-weight: 300;
+    padding: 0 0 50px 0;
   }
 
   span {

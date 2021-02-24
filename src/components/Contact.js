@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const SectionStyles = styled.section `
 div.section-container {
   z-index: 0;
+  padding: 0 0 25px 0;
 }
 
 h4 {
