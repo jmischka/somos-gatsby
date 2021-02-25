@@ -1,4 +1,5 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby"
 import styled from 'styled-components';
 
 const SectionStyles = styled.section `
@@ -111,15 +112,27 @@ button:hover {
 `
 
 export default function Contact() {
+  const data = useStaticQuery(graphql `
+    query ContactQuery {
+      allSanityContactSection {
+        nodes {
+          contactName
+          contactInformationA
+          contactInformationB       
+        }
+      }
+    }
+  `)
+  console.log(data);
   return (
     <SectionStyles>
       <div className="section-container dark-theme">
         <h4>Contact Somos</h4>
         <div className="section-textbox">
           <div>
-            <span>Juan Andres Placencia</span>
-            <span>Email: JP@somoshospitality.net</span>
-            <span>Website: Somoshospitality.net</span>
+            <span>{data.allSanityContactSection.nodes[0].contactName}</span>
+            <span>{data.allSanityContactSection.nodes[0].contactInformationA}</span>
+            <span>{data.allSanityContactSection.nodes[0].contactInformationB}</span>
             <figure></figure>
           </div>
           <div>
