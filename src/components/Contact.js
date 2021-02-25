@@ -123,7 +123,6 @@ export default function Contact() {
       }
     }
   `)
-  console.log(data);
   return (
     <SectionStyles>
       <div className="section-container dark-theme">

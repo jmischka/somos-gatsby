@@ -9,10 +9,11 @@ require('dotenv').config()
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `SOMOS HOSPITALITY`,
-    description: `Somos Hospitality is a service that...`,
+    title: `Somos Hospitality`,
+    description: `Somos is a hospitality and consultancy business sharing the best of Latin in America food, culture, people, and experiences`,
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-source-sanity',
       options: {
