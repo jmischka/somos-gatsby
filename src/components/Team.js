@@ -49,7 +49,7 @@ const SectionStyles = styled.section `
     display: block;
     margin: 0 0 0 0;
     font-size: 1.8em;
-    line-height: 1.3;
+    line-height: 1.35;
     font-weight: 300;
   }
 
@@ -94,7 +94,7 @@ const SectionStyles = styled.section `
     display: block;
     margin: 0 0 0 0;
     font-size: 1.6em;
-    line-height: 1.3;
+    line-height: 1.35;
     font-weight: 300;
     padding: 0 0 50px 0;
   }

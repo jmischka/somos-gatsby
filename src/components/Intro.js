@@ -39,7 +39,7 @@ div.section-textbox {
 h1,p {
   display: inline;
   margin: 0 0 0 0;
-  font-size: 6em;
+  font-size: 7em;
   font-weight: 300;
   line-height: 1.1;
   letter-spacing: -1px;
