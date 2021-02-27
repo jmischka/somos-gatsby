@@ -31,6 +31,7 @@ header {
     width: 100%;
     height: auto;
     padding: 0 0 12px 0;
+    text-align: center;
     background-color: rgba(255,255,255,.7);
     z-index: 100;
 }

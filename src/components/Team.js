@@ -15,6 +15,12 @@ const SectionStyles = styled.section `
     width: calc((100% / 12) * 7);
     order: 2;
     padding: 0 0 0 25px;
+
+    @media screen and (max-width: 1024px) {
+      margin: 0 0 0 calc((100% / 12) * 1);
+      width: calc((100% / 12) * 10);
+      order: 1;
+    }
   }
 
   .gatsby-image-wrapper:after {
@@ -34,15 +40,29 @@ const SectionStyles = styled.section `
     width: calc((100% / 12) * 4);
     order: 1;
     padding: 120px 25px 0 0;
+
+    @media screen and (max-width: 1024px) {
+      margin: 0 0 0 calc((100% / 12) * 1);
+      width: calc((100% / 12) * 10);
+      order: 2;
+      padding: 25px 0 0 0;
+    }
   }
 
   h2 {
-    margin: 0 0 12px 0;
+    display: block;
+    margin: 0 0 6px 0;
     position: relative;
     font-size: 8em;
     font-weight: 700;
     line-height: .8;
     letter-spacing: -2px;
+
+    @media screen and (max-width: 1024px) {
+      display: inline;
+      margin: 0 0 0 0;
+      font-size: 5em;
+    }
   }
 
   p {
@@ -51,6 +71,10 @@ const SectionStyles = styled.section `
     font-size: 1.8em;
     line-height: 1.35;
     font-weight: 300;
+
+    @media screen and (max-width: 1024px) {
+      display: inline;
+    }
   }
 
   a {
@@ -68,6 +92,10 @@ const SectionStyles = styled.section `
     top: 0;
     width: 20px;
     height: 100%;
+
+    @media screen and (max-width: 700px) {
+      display: none;
+    }
   }
   `
 

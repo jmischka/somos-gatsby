@@ -17,6 +17,10 @@ div.section-container {
   bottom: 0;
   width: calc((100% / 12) * 4);
   height: auto;
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 }
 
 .somos-branding img {
@@ -34,6 +38,11 @@ div.section-textbox {
   width: calc((100%/12) * 8);
   padding: 0 25px 0 0;
   transform: translateY(-50%);
+
+  @media screen and (max-width: 1024px) {
+    width: calc((100%/12) * 10);
+    padding: 0 0 0 0;
+  }
 }
 
 h1,p {
@@ -43,6 +52,14 @@ h1,p {
   font-weight: 300;
   line-height: 1.1;
   letter-spacing: -1px;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 5em;
+  }
+
+  @media screen and (max-width: 700px) {
+    font-size: 4em;
+  }
 }
 
 h1 {  
@@ -55,10 +72,23 @@ h1 {
 div.section-imagebox {
   position: absolute;
   margin: 0 0 0 0;
-  right: 0;
+  left: calc((100% / 12) * 9);
   top: 50%;
   width: calc((100% / 12) * 3);
   transform: translateY(-50%);
+
+  @media screen and (max-width: 1024px) {
+    left: calc((100% / 12) * 1);
+    top: auto;
+    bottom: 0;
+    width: calc((100% / 12) * 10);
+    transform: translateY(0);
+  }
+
+  @media screen and (max-width: 700px) {
+    left: calc((100% / 12) * 1);
+    width: calc((100% / 12) * 10);
+  }
 }
 
 div.section-imagebox div:nth-child(1),
@@ -68,6 +98,11 @@ div.section-imagebox div:nth-child(3) {
   margin: 0 0 0 0;
   width: 33.333%;
   height: auto;
+
+  @media screen and (max-width: 1024px) {
+    display: inline-block;
+    width: 33.333%;
+  }
 }
 
 div.section-imagebox div:nth-child(2) {
@@ -76,6 +111,12 @@ div.section-imagebox div:nth-child(2) {
   margin: 0 0 0 33.333%;
   width: 66.666%;
   height: auto;
+
+  @media screen and (max-width: 1024px) {
+    display: inline-block;
+    margin: 0 0 0 0;
+    width: 33.333%;
+  }
 }
 
 div.section-imagebox div:nth-child(1):after,

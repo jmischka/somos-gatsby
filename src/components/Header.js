@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'gatsby';
 import SomosBranding from '../assets/SomosBranding.png';
 import styled from 'styled-components';
 
@@ -13,7 +14,7 @@ const HeaderStyles = styled.header `
 export default function Header() {
   return (
     <HeaderStyles>
-      <img alt="Somos Branding" src={SomosBranding} />
+      <Link to="/"><img alt="Somos Branding" src={SomosBranding} /></Link>
     </HeaderStyles>
   ) 
 }
