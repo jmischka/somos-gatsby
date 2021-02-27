@@ -7,6 +7,10 @@ import styled from 'styled-components';
 const SectionStyles = styled.section `
   div.section-container {
     z-index: 2;
+
+    @media screen and (max-width: 1024px) {
+      padding: 120px 0 0 0;
+    }
   }
 
   .gatsby-image-wrapper {

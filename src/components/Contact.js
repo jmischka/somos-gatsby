@@ -40,12 +40,23 @@ div.section-textbox div:nth-child(1) {
   margin: 0 0 0 calc((100%/12) * 1);
   width: calc((100%/12) * 3);
   padding: 25px 25px 25px 0;
+
+  @media screen and (max-width: 1024px) {
+    width: calc((100%/12) * 10);
+    padding: 25px 0 0 0;
+  }
 }
 
 div.section-textbox div:nth-child(2) {
   margin: 0 0 0 0;
   width: calc((100%/12) * 7);
   padding: 25px 0 25px 25px;
+
+  @media screen and (max-width: 1024px) {
+    margin: 0 0 0 calc((100%/12) * 1);
+    width: calc((100%/12) * 10);
+    padding: 50px 0 50px 0;
+  }
 }
 
 div.section-textbox span {
@@ -68,6 +79,10 @@ figure {
   width: 100%;
   height: 0;
   padding-bottom: 100%;
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 }
 
 label {

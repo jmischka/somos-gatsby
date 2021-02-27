@@ -7,12 +7,17 @@ import styled from 'styled-components';
 const SectionStyles = styled.section `
   div.section-container {
     z-index: 1;
+    padding: 0 0 50px 0;
   }
 
   div.section-container .block {
     position: relative;
     width: calc((100%/12) * 5);
     height: auto;
+
+    @media screen and (max-width: 1024px) {
+      width: calc((100%/12) * 10);
+    }
   }
 
   div.section-container .block:nth-child(1) {
@@ -23,6 +28,12 @@ const SectionStyles = styled.section `
   div.section-container .block:nth-child(2) {
     margin: 0 0 0 0;
     padding: 120px 0 0 50px;
+
+    @media screen and (max-width: 1024px) {
+      margin: 0 0 0 calc((100%/12) * 1);
+      width: calc((100%/12) * 10);
+      padding: 50px 0 0 0;
+    }
   }
 
   .gatsby-image-wrapper {
@@ -68,6 +79,10 @@ const SectionStyles = styled.section `
     width: 20px;
     height: 100%;
     background-repeat: repeat-y;
+
+    @media screen and (max-width: 700px) {
+      display: none;
+    }
   }
 `
 const backgroundStyle = {backgroundImage: 'url(' + Pattern + ')',};

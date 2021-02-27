@@ -54,7 +54,7 @@ h1,p {
   letter-spacing: -1px;
 
   @media screen and (max-width: 1024px) {
-    font-size: 5em;
+    font-size: 6em;
   }
 
   @media screen and (max-width: 700px) {
