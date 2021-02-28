@@ -66,7 +66,7 @@ const SectionStyles = styled.section `
   }
 
   span {
-    font-size: 4.5em;
+    font-size: 4.8em;
     font-weight: 700;
     letter-spacing: -2px;
     line-height: .8;
@@ -151,6 +151,9 @@ export default function Team() {
             }
             teamMemberImage {
               asset {
+                fixed(width: 100, height: 100) {
+                  ...GatsbySanityImageFixed
+                }
                 fluid(maxWidth: 2000) {
                   ...GatsbySanityImageFluid
                 }
@@ -174,7 +177,7 @@ export default function Team() {
           <a target="blank" href={ data.allSanityTeamSection.edges[0].node.teamMemberUrl }>Discover More</a>
           
           <SubboxStyles>
-            <Img fluid={data.allSanityTeamSection.edges[1].node.teamMemberImage.asset.fluid} />
+            <Img fluid={data.allSanityTeamSection.edges[1].node.teamMemberImage.asset.fixed} />
             <p><span className="teammember">{ data.allSanityTeamSection.edges[1].node.teamMemberBio[0].children[0].text }</span> { data.allSanityTeamSection.edges[1].node.teamMemberBio[0].children[1].text }</p>
           </SubboxStyles>
         </div>
