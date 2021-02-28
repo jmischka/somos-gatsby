@@ -131,6 +131,7 @@ export default function Contact() {
     query ContactQuery {
       allSanityContactSection {
         nodes {
+          _type
           contactName
           contactInformationA
           contactInformationB       
@@ -141,6 +142,7 @@ export default function Contact() {
   return (
     <SectionStyles>
       <div className="section-container dark-theme">
+        <h2 className="sr-only">{ data.allSanityContactSection.nodes[0]._type }</h2>
         <h4>Contact Somos</h4>
         <div className="section-textbox">
           <div>

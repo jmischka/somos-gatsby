@@ -99,7 +99,6 @@ a:hover {
     position: absolute;
     white-space: nowrap;
     width: 1px;
-    /* 1 */
   }
   
   .sr-only.focusable:active,

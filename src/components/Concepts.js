@@ -20,12 +20,12 @@ const SectionStyles = styled.section `
     }
   }
 
-  div.section-container .block:nth-child(1) {
+  div.section-container .block:nth-child(2) {
     margin: 0 0 0 calc((100%/12) * 1);
     padding: 120px 50px 0 0;
   }
 
-  div.section-container .block:nth-child(2) {
+  div.section-container .block:nth-child(3) {
     margin: 0 0 0 0;
     padding: 120px 0 0 50px;
 
@@ -92,6 +92,7 @@ export default function Concepts() {
     query ConceptQuery {
       allSanityConceptSection {
         nodes {
+          _type
           conceptTitle
           conceptImage {
             asset {
@@ -114,6 +115,7 @@ export default function Concepts() {
   return (
     <SectionStyles>
       <div className="section-container">
+      <h2 className="sr-only">{ data.allSanityConceptSection.nodes[0]._type }</h2>
         <div className="block">
           <Img fluid={data.allSanityConceptSection.nodes[0].conceptImage.asset.fluid} />
           <h3>{data.allSanityConceptSection.nodes[0].conceptTitle}</h3>

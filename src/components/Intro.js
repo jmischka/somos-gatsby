@@ -45,7 +45,7 @@ div.section-textbox {
   }
 }
 
-h1,p {
+p {
   display: inline;
   margin: 0 0 0 0;
   font-size: 7em;
@@ -62,9 +62,7 @@ h1,p {
   }
 }
 
-h1 {  
-  display: inline-block;
-  margin: 0 9px 0 0;      
+span {
   font-weight: 700;
   letter-spacing: -2px;
 }
@@ -146,6 +144,7 @@ export default function Intro() {
     query IntroQuery {
       allSanityFrontpageSection {
         nodes {
+          frontpageTitle
           frontpageIntroduction {
             _rawChildren
           }
@@ -160,16 +159,16 @@ export default function Intro() {
       }
     }
   `)
-  
+  console.log(data);
   return (
     <SectionStyles>
       <div className="section-container">
+        <h1 className="sr-only">{data.allSanityFrontpageSection.nodes[0].frontpageTitle}</h1>
         <figure className="somos-branding">
           <img alt="Somos branding" src={backgroundpattern} />
         </figure>
         <div className="section-textbox">
-          <h1>{data.allSanityFrontpageSection.nodes[0].frontpageIntroduction[0]._rawChildren[0].text}</h1>
-          <p>{data.allSanityFrontpageSection.nodes[0].frontpageIntroduction[0]._rawChildren[1].text}</p>
+          <p><span>{data.allSanityFrontpageSection.nodes[0].frontpageIntroduction[0]._rawChildren[0].text}</span> {data.allSanityFrontpageSection.nodes[0].frontpageIntroduction[0]._rawChildren[1].text}</p>
         </div>
         <div className="section-imagebox">
           <Img fluid={data.allSanityFrontpageSection.nodes[0].frontpageImages[1].asset.fluid} />

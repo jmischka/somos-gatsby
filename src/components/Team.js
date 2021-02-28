@@ -53,22 +53,6 @@ const SectionStyles = styled.section `
     }
   }
 
-  h2 {
-    display: block;
-    margin: 0 0 6px 0;
-    position: relative;
-    font-size: 8em;
-    font-weight: 700;
-    line-height: .8;
-    letter-spacing: -2px;
-
-    @media screen and (max-width: 1024px) {
-      display: inline;
-      margin: 0 0 0 0;
-      font-size: 5em;
-    }
-  }
-
   p {
     display: block;
     margin: 0 0 0 0;
@@ -78,6 +62,19 @@ const SectionStyles = styled.section `
 
     @media screen and (max-width: 1024px) {
       display: inline;
+    }
+  }
+
+  span {
+    font-size: 4.5em;
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: .8;
+
+    @media screen and (max-width: 1024px) {
+      display: inline;
+      margin: 0 0 0 0;
+      font-size: 2.3em;
     }
   }
 
@@ -131,8 +128,10 @@ const SectionStyles = styled.section `
     padding: 0 0 50px 0;
   }
 
-  span {
+  span.teammember {
+    font-size: 1em;
     font-weight: 700;
+    letter-spacing: 0;
   }
 `
 const backgroundStyle = {backgroundImage: 'url(' + Pattern + ')',};
@@ -143,6 +142,7 @@ export default function Team() {
       allSanityTeamSection {
         edges {
           node {
+            _type
             teamMemberName
             teamMemberBio {
               children {
@@ -163,19 +163,19 @@ export default function Team() {
       }
     }
   `)
-
+  console.log(data);  
   return (
     <SectionStyles>
       <div className="section-container">
+        <h2 className="sr-only">{ data.allSanityTeamSection.edges[0].node._type }</h2>
         <Img fluid={data.allSanityTeamSection.edges[0].node.teamMemberImage.asset.fluid} />
         <div className="section-textbox">
-          <h2>{ data.allSanityTeamSection.edges[0].node.teamMemberBio[0].children[0].text }</h2>
-          <p>{ data.allSanityTeamSection.edges[0].node.teamMemberBio[0].children[1].text }</p>
+          <p><span>{data.allSanityTeamSection.edges[0].node.teamMemberBio[0].children[0].text}</span> {data.allSanityTeamSection.edges[0].node.teamMemberBio[0].children[1].text}</p>
           <a target="blank" href={ data.allSanityTeamSection.edges[0].node.teamMemberUrl }>Discover More</a>
           
           <SubboxStyles>
             <Img fluid={data.allSanityTeamSection.edges[1].node.teamMemberImage.asset.fluid} />
-            <p><span>{ data.allSanityTeamSection.edges[1].node.teamMemberBio[0].children[0].text }</span> { data.allSanityTeamSection.edges[1].node.teamMemberBio[0].children[1].text }</p>
+            <p><span className="teammember">{ data.allSanityTeamSection.edges[1].node.teamMemberBio[0].children[0].text }</span> { data.allSanityTeamSection.edges[1].node.teamMemberBio[0].children[1].text }</p>
           </SubboxStyles>
         </div>
         <div className="pattern" style={backgroundStyle}></div>
