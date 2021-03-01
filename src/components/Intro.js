@@ -159,7 +159,7 @@ export default function Intro() {
       }
     }
   `)
-  console.log(data);
+  
   return (
     <SectionStyles>
       <div className="section-container">

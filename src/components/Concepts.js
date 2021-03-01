@@ -90,10 +90,15 @@ const backgroundStyle = {backgroundImage: 'url(' + Pattern + ')',};
 export default function Concepts() {
   const data = useStaticQuery(graphql `
     query ConceptQuery {
-      allSanityConceptSection {
+      concept:allSanityConceptSection(filter: {id: {eq: "-db03b693-2613-5b78-b591-7a2312547c10"}}) {
         nodes {
           _type
           conceptTitle
+          conceptDescription {
+            children {
+              text
+            }
+          }
           conceptImage {
             asset {
               fluid(maxWidth: 1500) {
@@ -101,32 +106,48 @@ export default function Concepts() {
               }
             }
           }
+          imageAltText
+          conceptUrl
+        }
+      }
+      consulting:allSanityConceptSection(filter: {id: {eq: "-3f6b144e-a366-5551-9535-c99592bd88c9"}}) {
+        nodes {
+          id
+          conceptTitle
           conceptDescription {
             children {
               text
             }
           }
+          conceptImage {
+            asset {
+              fluid(maxWidth: 1500) {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
           conceptUrl
+          imageAltText
         }
       }
     }
   `)
-
+  console.log(data);  
   return (
     <SectionStyles>
       <div className="section-container">
-      <h2 className="sr-only">{ data.allSanityConceptSection.nodes[0]._type }</h2>
+      <h2 className="sr-only">{data.concept.nodes[0]._type}</h2>
         <div className="block">
-          <Img fluid={data.allSanityConceptSection.nodes[0].conceptImage.asset.fluid} />
-          <h3>{data.allSanityConceptSection.nodes[0].conceptTitle}</h3>
-          <p>{data.allSanityConceptSection.nodes[0].conceptDescription[0].children[0].text}</p>
-          <a target="_blank" rel="noreferrer" href={data.allSanityConceptSection.nodes[0].conceptUrl}>Discover More</a>
+          <Img fluid={data.concept.nodes[0].conceptImage.asset.fluid} alt={data.concept.nodes[0].imageAltText} />
+          <h3>{data.concept.nodes[0].conceptTitle}</h3>
+          <p>{data.concept.nodes[0].conceptDescription[0].children[0].text}</p>
+          <a target="_blank" rel="noreferrer" href={data.concept.nodes[0].conceptUrl}>Discover More</a>
         </div>
         <div className="block">
-          <Img fluid={data.allSanityConceptSection.nodes[1].conceptImage.asset.fluid} />
-          <h3>{data.allSanityConceptSection.nodes[1].conceptTitle}</h3>
-          <p>{data.allSanityConceptSection.nodes[1].conceptDescription[0].children[0].text}</p>
-          <a target="_blank" rel="noreferrer" href={data.allSanityConceptSection.nodes[1].conceptUrl}>Discover More</a>
+          <Img fluid={data.consulting.nodes[0].conceptImage.asset.fluid} alt={data.consulting.nodes[0].imageAltText} />
+          <h3>{data.consulting.nodes[0].conceptTitle}</h3>
+          <p>{data.consulting.nodes[0].conceptDescription[0].children[0].text}</p>
+          <a target="_blank" rel="noreferrer" href={data.consulting.nodes[0].conceptUrl}>Discover More</a>
         </div>
         <div className="pattern" style={backgroundStyle}></div>
       </div>

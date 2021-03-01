@@ -139,46 +139,59 @@ const backgroundStyle = {backgroundImage: 'url(' + Pattern + ')',};
 export default function Team() {
   const data = useStaticQuery(graphql `
     query TeamQuery {
-      allSanityTeamSection {
-        edges {
-          node {
-            _type
-            teamMemberName
-            teamMemberBio {
-              children {
-                text
-              }
+      juan:allSanityTeamSection(filter: {id: {eq: "-9bfb46ef-ef70-56b1-88f3-2b6065f71168"}}) {
+        nodes {
+          id
+          _type
+          teamMemberBio {
+            children {
+              text
             }
-            teamMemberImage {
-              asset {
-                fixed(width: 100, height: 100) {
-                  ...GatsbySanityImageFixed
-                }
-                fluid(maxWidth: 2000) {
-                  ...GatsbySanityImageFluid
-                }
-              }
-            }
-            imageAltText
-            teamMemberUrl
           }
+          teamMemberImage {
+            asset {
+              fluid(maxWidth: 2000) {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+          teamMemberName
+          teamMemberUrl
+        }
+      }
+      leah:allSanityTeamSection(filter: {id: {eq: "-4e506adc-7c4c-5c3c-b814-6bc28c7208c1"}}) {
+        nodes {
+          id
+          teamMemberBio {
+            children {
+              text
+            }
+          }
+          teamMemberImage {
+            asset {
+              fixed(width: 100, height: 100) {
+                ...GatsbySanityImageFixed
+              }
+            }
+          }
+          teamMemberName
+          teamMemberUrl
         }
       }
     }
   `)
-  console.log(data);  
   return (
     <SectionStyles>
       <div className="section-container">
-        <h2 className="sr-only">{ data.allSanityTeamSection.edges[0].node._type }</h2>
-        <Img fluid={data.allSanityTeamSection.edges[0].node.teamMemberImage.asset.fluid} />
+        <h2 className="sr-only">{ data.juan.nodes[0]._type }</h2>
+        <Img fluid={data.juan.nodes[0].teamMemberImage.asset.fluid} alt={data.juan.nodes[0].teamMemberName} />
         <div className="section-textbox">
-          <p><span>{data.allSanityTeamSection.edges[0].node.teamMemberBio[0].children[0].text}</span> {data.allSanityTeamSection.edges[0].node.teamMemberBio[0].children[1].text}</p>
-          <a target="blank" href={ data.allSanityTeamSection.edges[0].node.teamMemberUrl }>Discover More</a>
+          <p><span>{data.juan.nodes[0].teamMemberBio[0].children[0].text}</span> {data.juan.nodes[0].teamMemberBio[0].children[1].text}</p>
+          <a target="blank" href={data.juan.nodes[0].teamMemberUrl}>Discover More</a>
           
           <SubboxStyles>
-            <Img fluid={data.allSanityTeamSection.edges[1].node.teamMemberImage.asset.fixed} />
-            <p><span className="teammember">{ data.allSanityTeamSection.edges[1].node.teamMemberBio[0].children[0].text }</span> { data.allSanityTeamSection.edges[1].node.teamMemberBio[0].children[1].text }</p>
+            <Img fluid={data.leah.nodes[0].teamMemberImage.asset.fixed} alt={data.leah.nodes[0].teamMemberName} />
+            <p><span className="teammember">{data.leah.nodes[0].teamMemberBio[0].children[0].text}</span> {data.leah.nodes[0].teamMemberBio[0].children[1].text}</p>
           </SubboxStyles>
         </div>
         <div className="pattern" style={backgroundStyle}></div>

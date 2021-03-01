@@ -15,7 +15,6 @@ export default function SEO() {
             }
         }
     `)
-    console.log(data);
     return (
       <Helmet>
           <html lang="en" />

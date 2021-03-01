@@ -139,6 +139,7 @@ export default function Contact() {
       }
     }
   `)
+  
   return (
     <SectionStyles>
       <div className="section-container dark-theme">
