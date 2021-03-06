@@ -48,7 +48,7 @@ div.section-textbox {
 p {
   display: inline;
   margin: 0 0 0 0;
-  font-size: 7em;
+  font-size: 8em;
   font-weight: 300;
   line-height: 1.1;
   letter-spacing: -1px;
@@ -95,7 +95,8 @@ div.section-imagebox div:nth-child(3) {
   display: block;
   margin: 0 0 0 0;
   width: 33.333%;
-  height: auto;
+  height: 0;
+  padding-bottom: 33.333%;
 
   @media screen and (max-width: 1024px) {
     display: inline-block;
@@ -108,12 +109,14 @@ div.section-imagebox div:nth-child(2) {
   display: block;
   margin: 0 0 0 33.333%;
   width: 66.666%;
-  height: auto;
+  height: 0;
+  padding-bottom: 66.666%;
 
   @media screen and (max-width: 1024px) {
     display: inline-block;
     margin: 0 0 0 0;
     width: 33.333%;
+    padding-bottom: 33.333%;
   }
 }
 
@@ -150,7 +153,7 @@ export default function Intro() {
           }
           frontpageImages {
             asset {
-              fluid {
+              fluid(maxWidth: 700) {
                 ...GatsbySanityImageFluid
               }
             }

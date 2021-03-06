@@ -132,7 +132,6 @@ export default function Concepts() {
       }
     }
   `)
-  console.log(data);  
   return (
     <SectionStyles>
       <div className="section-container">
