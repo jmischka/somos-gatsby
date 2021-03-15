@@ -1,5 +1,6 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby";
+import SomosIcon from '../assets/Somos-icon_fullko.png';
 import styled from 'styled-components';
 
 const SectionStyles = styled.section `
@@ -66,6 +67,7 @@ div.section-textbox span {
   font-weight: 300;
   line-height: 1.25;
   color: white;
+  text-align: center;
 }
 
 div.section-textbox span:nth-child(1) {
@@ -83,6 +85,15 @@ figure {
   @media screen and (max-width: 1024px) {
     display: none;
   }
+}
+
+img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  opacity: .25;
 }
 
 label {
@@ -150,7 +161,9 @@ export default function Contact() {
             <span>{data.allSanityContactSection.nodes[0].contactName}</span>
             <span>{data.allSanityContactSection.nodes[0].contactInformationA}</span>
             <span>{data.allSanityContactSection.nodes[0].contactInformationB}</span>
-            <figure></figure>
+            <figure>
+              <img alt="Somos branding icon" src={SomosIcon} />
+            </figure>
           </div>
           <div>
             <form>            
