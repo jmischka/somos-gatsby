@@ -4,52 +4,12 @@ import Img from "gatsby-image";
 import Pattern from '../assets/Patter_1817.png';
 import styled from 'styled-components';
 
-const SectionStyles = styled.section `
+const SectionStyles = styled.section`
   div.section-container {
     z-index: 2;
 
     @media screen and (max-width: 1024px) {
-      padding: 120px 0 0 0;
-    }
-  }
-
-  .gatsby-image-wrapper {
-    position: relative;
-    margin: 0 0 0 0;
-    width: calc((100% / 12) * 7);
-    order: 2;
-    padding: 0 0 0 25px;
-
-    @media screen and (max-width: 1024px) {
-      margin: 0 0 0 calc((100% / 12) * 1);
-      width: calc((100% / 12) * 10);
-      order: 1;
-    }
-  }
-
-  .gatsby-image-wrapper:after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(242,159,5,.3);
-  }
-
-  div.section-textbox {
-    position: relative;
-    margin: 0 0 0 calc((100% / 12) * 1);
-    width: calc((100% / 12) * 4);
-    order: 1;
-    padding: 120px 25px 0 0;
-
-    @media screen and (max-width: 1024px) {
-      margin: 0 0 0 calc((100% / 12) * 1);
-      width: calc((100% / 12) * 10);
-      order: 2;
-      padding: 25px 0 0 0;
+      padding: 120px 0 50px 0;
     }
   }
 
@@ -57,7 +17,7 @@ const SectionStyles = styled.section `
     display: block;
     margin: 0 0 0 0;
     font-size: 1.8em;
-    line-height: 1.35;
+    line-height: 1.4;
     font-weight: 300;
 
     @media screen and (max-width: 1024px) {
@@ -66,7 +26,7 @@ const SectionStyles = styled.section `
   }
 
   span {
-    font-size: 4.8em;
+    font-size: 4em;
     font-weight: 700;
     letter-spacing: -2px;
     line-height: .8;
@@ -80,11 +40,15 @@ const SectionStyles = styled.section `
 
   a {
     display: block;
-    margin: 16px 0 50px 0;
+    margin: 16px 0 0 0;
     font-size: 1.6em;
     line-height: 1.3;
     font-weight: 700;
     text-transform: uppercase;
+
+    @media screen and (max-width: 700px) {
+      margin: 16px 0 0 0;
+    }
   }
 
   .pattern {
@@ -98,46 +62,89 @@ const SectionStyles = styled.section `
       display: none;
     }
   }
+`
+
+  const JuanSection = styled.div`
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    width: 100%;
+    height: auto;
+
+    .gatsby-image-wrapper {
+      position: relative;
+      margin: 0 0 0 0;
+      width: calc((100% / 12) * 6);
+      height: 100vh;
+      order: 2;
+      padding: 0 0 0 0;
+  
+      @media screen and (max-width: 1024px) {
+        margin: 0 0 0 calc((100% / 12) * 1);
+        width: calc((100% / 12) * 10);
+        height: auto;
+        order: 1;
+      }
+    }
+
+    .section-textbox {
+      position: relative;
+      margin: 0 0 0 calc((100% / 12) * 1);
+      width: calc((100% / 12) * 5);
+      order: 1;
+      padding: 120px 50px 0 0;
+  
+      @media screen and (max-width: 1024px) {
+        margin: 0 0 0 calc((100% / 12) * 1);
+        width: calc((100% / 12) * 10);
+        order: 2;
+        padding: 25px 0 0 0;
+      }
+    }
   `
 
-  const SubboxStyles = styled.div `
-  .gatsby-image-wrapper {
+  const LeahSection = styled.div`
     position: relative;
-    margin: 0 0 16px 0;
-    width: 100px;
-    height: 100px;
-  }
-
-  .gatsby-image-wrapper:after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(217,82,4,.3);
-  }
+    height: auto;
+    
+    .gatsby-image-wrapper {
+      position: relative;
+      margin: 0 0 0 calc((100% / 12) * 1);
+      width: calc((100% / 12) * 5);
+      height: 100vh;
+      padding: 0 25px 0 0;
 
-  p {
-    display: block;
-    margin: 0 0 0 0;
-    font-size: 1.6em;
-    line-height: 1.35;
-    font-weight: 300;
-    padding: 0 0 50px 0;
-  }
+      @media screen and (max-width: 1024px) {
+        margin: 50px 0 0 calc((100% / 12) * 1);
+        width: calc((100% / 12) * 10);
+        height: auto;
+      }
+    }
 
-  span.teammember {
-    font-size: 1em;
-    font-weight: 700;
-    letter-spacing: 0;
-  }
-`
+    .section-textbox {
+      position: relative;
+      margin: 0 0 0 0;
+      width: calc((100% / 12) * 5);
+      padding: 120px 0 0 50px;
+
+      @media screen and (max-width: 1024px) {
+        margin: 0 0 0 calc((100% / 12) * 1);
+        width: calc((100% / 12) * 10);
+        padding: 25px 0 0 0;
+      }
+    }
+  `
 const backgroundStyle = {backgroundImage: 'url(' + Pattern + ')',};
 
 export default function Team() {
-  const data = useStaticQuery(graphql `
+  const data = useStaticQuery(graphql`
     query TeamQuery {
       juan:allSanityTeamSection(filter: {id: {eq: "-9bfb46ef-ef70-56b1-88f3-2b6065f71168"}}) {
         nodes {
@@ -169,8 +176,8 @@ export default function Team() {
           }
           teamMemberImage {
             asset {
-              fixed(width: 100, height: 100) {
-                ...GatsbySanityImageFixed
+              fluid(maxWidth: 2000) {
+                ...GatsbySanityImageFluid
               }
             }
           }
@@ -183,17 +190,23 @@ export default function Team() {
   return (
     <SectionStyles>
       <div className="section-container">
-        <h2 className="sr-only">{ data.juan.nodes[0]._type }</h2>
-        <Img fluid={data.juan.nodes[0].teamMemberImage.asset.fluid} alt={data.juan.nodes[0].teamMemberName} />
-        <div className="section-textbox">
-          <p><span>{data.juan.nodes[0].teamMemberBio[0].children[0].text}</span> {data.juan.nodes[0].teamMemberBio[0].children[1].text}</p>
-          <a target="blank" href={data.juan.nodes[0].teamMemberUrl}>Discover More</a>
-          
-          <SubboxStyles>
-            <Img fluid={data.leah.nodes[0].teamMemberImage.asset.fixed} alt={data.leah.nodes[0].teamMemberName} />
-            <p><span className="teammember">{data.leah.nodes[0].teamMemberBio[0].children[0].text}</span> {data.leah.nodes[0].teamMemberBio[0].children[1].text}</p>
-          </SubboxStyles>
-        </div>
+        <JuanSection>
+          <h2 className="sr-only">{ data.juan.nodes[0]._type }</h2>
+          <Img fluid={data.juan.nodes[0].teamMemberImage.asset.fluid} alt={data.juan.nodes[0].teamMemberName} />
+          <div className="section-textbox">
+            <p><span>{data.juan.nodes[0].teamMemberBio[0].children[0].text}</span> {data.juan.nodes[0].teamMemberBio[0].children[1].text}</p>
+            <a target="blank" href={data.juan.nodes[0].teamMemberUrl}>Discover More</a>
+          </div>
+        </JuanSection> 
+
+        <LeahSection>
+          <h2 className="sr-only">{ data.leah.nodes[0]._type }</h2>
+          <Img fluid={data.leah.nodes[0].teamMemberImage.asset.fluid} alt={data.leah.nodes[0].teamMemberName} />
+          <div className="section-textbox">
+            <p><span>{data.leah.nodes[0].teamMemberBio[0].children[0].text}</span> {data.leah.nodes[0].teamMemberBio[0].children[1].text}</p>
+            <a target="blank" href={data.leah.nodes[0].teamMemberUrl}>Discover More</a>
+          </div>
+        </LeahSection>    
         <div className="pattern" style={backgroundStyle}></div>
       </div>
     </SectionStyles>

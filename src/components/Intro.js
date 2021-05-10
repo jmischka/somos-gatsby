@@ -131,15 +131,6 @@ div.section-imagebox div:nth-child(3):after {
   width: 100%;
   height: 100%;
 }
-
-div.section-imagebox div:nth-child(2):after {
-  background-color: rgba(242,159,5,.3);
-}
-
-div.section-imagebox div:nth-child(1):after,
-div.section-imagebox div:nth-child(3):after {
-  background-color: rgba(217,82,4,.3);
-}
 `
 
 export default function Intro() {

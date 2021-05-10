@@ -7,7 +7,11 @@ import styled from 'styled-components';
 const SectionStyles = styled.section `
   div.section-container {
     z-index: 1;
-    padding: 0 0 50px 0;
+    padding: 0 0 100px 0;
+
+    @media screen and (max-width: 1024px) {
+      padding: 0 0 50px 0;
+    }
   }
 
   div.section-container .block {
