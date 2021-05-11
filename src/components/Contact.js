@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import SomosIcon from '../assets/Somos-icon_fullko.png';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const SectionStyles = styled.section `
@@ -133,7 +134,29 @@ button {
 
 button:hover {
   background-color: #F15D22;
+  color: white;
   border: none;
+}
+
+a {
+  position: relative;
+  display: block;
+  padding: 12px 16px;
+  font-size: 1.4em;
+  font-weight: 700;
+  line-height: 1;
+  width: 125px;
+  height: auto;
+  outline: none;
+  border: 1px dotted white;
+  background-color: transparent;
+  transition-duration: .3s;
+  color: white;
+  &:hover {
+    background-color: #F15D22;
+    text-decoration: none;
+    border: none;
+  }
 }
 `
 
@@ -182,7 +205,7 @@ export default function Contact() {
                 <textarea rows="8" name="textarea" id="textarea" type="textarea" />
               </label>
 
-              <button aria-label="submit" type="submit">Get In Touch</button>
+              <Link to="/success">Get In Touch</Link>
             </form>
           </div>
         </div>
