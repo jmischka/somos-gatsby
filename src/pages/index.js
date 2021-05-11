@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Layout from "../components/Layout";
 import Intro from "../components/Intro";
 import Team from "../components/Team";
 import Concepts from "../components/Concepts";
 import Contact from "../components/Contact";
-import CursorCircle from "../components/CursorCircle";
 
 
 export default function Home() {
-
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
   }, []);
