@@ -1,7 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import SomosIcon from '../assets/Somos-icon_fullko.png';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const SectionStyles = styled.section `
@@ -160,7 +159,7 @@ a {
 }
 `
 
-export default function Contact() {
+export default function Contact(props) {
   const data = useStaticQuery(graphql `
     query ContactQuery {
       allSanityContactSection {
@@ -189,23 +188,22 @@ export default function Contact() {
             </figure>
           </div>
           <div>
-            <form>            
+            <form id="contact-form" netlify-honeypot="bot-field" data-netlify="true" name="contact" onSubmit={props.handleFormSubmit}>            
+              <input type="hidden" name="bot-field" />
+              <input type="hidden" name="form-name" value="contact" />
               <label htmlFor="name">
                 Name:
-                <input id="name" name="name" required="" type="text" />
+                <input id="name" name="name" required="" type="text" value={props.name} onChange={props.handleInputChange} />
               </label>
-
               <label htmlFor="email">
                 Email:
-                <input id="email" name="email" required="" type="text" />
+                <input id="email" name="email" required="" type="email" value={props.email} onChange={props.handleInputChange} />
               </label>
-
               <label htmlFor="message">
                 Message:
-                <textarea rows="8" name="textarea" id="textarea" type="textarea" />
+                <textarea rows="8" name="message" id="message" type="textarea" value={props.message} onChange={props.handleInputChange} />
               </label>
-
-              <Link to="/success">Get In Touch</Link>
+              <button aria-label="submit" type="submit">Get In Touch</button>
             </form>
           </div>
         </div>

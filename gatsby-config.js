@@ -10,7 +10,7 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: `Somos Hospitality`,
-    description: `Somos is a hospitality and consultancy business sharing the best of Latin in America food, culture, people, and experiences`,
+    description: `We are a restaurant, food service, and hospitality consulting company lead by awarding chef, Juan Placencia, and other industry experts`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
