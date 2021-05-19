@@ -11,6 +11,8 @@ module.exports = {
   siteMetadata: {
     title: `Somos Hospitality`,
     description: `We are a restaurant, food service, and hospitality consulting company lead by awarding chef, Juan Placencia, and other industry experts`,
+    image: "/assets/SomosFBimg.jpg",
+    url: "https://www.somoshospitality.net",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
