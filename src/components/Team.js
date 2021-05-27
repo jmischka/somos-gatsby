@@ -26,7 +26,7 @@ const SectionStyles = styled.section`
   }
 
   span {
-    font-size: 4em;
+    font-size: 3.2em;
     font-weight: 700;
     letter-spacing: -2px;
     line-height: .8;

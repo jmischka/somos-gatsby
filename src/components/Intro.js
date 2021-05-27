@@ -35,7 +35,7 @@ div.section-textbox {
   margin: 0 0 0 0;
   left: calc((100%/12) * 1);
   top: 50%;
-  width: calc((100%/12) * 8);
+  width: calc((100%/12) * 7.5);
   padding: 0 25px 0 0;
   transform: translateY(-50%);
 
@@ -48,7 +48,7 @@ div.section-textbox {
 p {
   display: inline;
   margin: 0 0 0 0;
-  font-size: 8em;
+  font-size: 7em;
   font-weight: 300;
   line-height: 1.1;
   letter-spacing: -1px;
@@ -70,9 +70,9 @@ span {
 div.section-imagebox {
   position: absolute;
   margin: 0 0 0 0;
-  left: calc((100% / 12) * 9);
+  left: calc((100% / 12) * 8.5);
   top: 50%;
-  width: calc((100% / 12) * 3);
+  width: calc((100% / 12) * 3.5);
   transform: translateY(-50%);
 
   @media screen and (max-width: 1024px) {
@@ -94,23 +94,24 @@ div.section-imagebox div:nth-child(3) {
   position: relative;
   display: block;
   margin: 0 0 0 0;
-  width: 33.333%;
+  width: 50%;
   height: 0;
-  padding-bottom: 33.333%;
+  padding-bottom: 50%;
 
   @media screen and (max-width: 1024px) {
     display: inline-block;
     width: 33.333%;
+    padding-bottom: 33.333%;
   }
 }
 
 div.section-imagebox div:nth-child(2) {
   position: relative;
   display: block;
-  margin: 0 0 0 33.333%;
-  width: 66.666%;
+  margin: 0 0 0 50%;
+  width: 50%;
   height: 0;
-  padding-bottom: 66.666%;
+  padding-bottom: 50%;
 
   @media screen and (max-width: 1024px) {
     display: inline-block;
