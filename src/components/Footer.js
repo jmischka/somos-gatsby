@@ -1,6 +1,6 @@
 import React from "react";
 import { IoLogoFacebook } from "react-icons/io";
-import { AiFillTwitterCircle, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
+import { AiFillInstagram } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import styled from 'styled-components';
 
@@ -35,9 +35,7 @@ export default function Footer() {
   return (
     <FooterStyles>
       <a target="_blank" rel="noreferrer" aria-label="Facebook" href="https://www.facebook.com/SomosHospitality"><IconContext.Provider value={{ className: "footer-social-link" }}><IoLogoFacebook /></IconContext.Provider></a>
-      <a target="_blank" rel="noreferrer" aria-label="Twitter" href="https://www.facebook.com/SomosHospitality"><IconContext.Provider value={{ className: "footer-social-link" }}><AiFillTwitterCircle /></IconContext.Provider></a>
-      <a target="_blank" rel="noreferrer" aria-label="Instagram" href="https://www.facebook.com/SomosHospitality"><IconContext.Provider value={{ className: "footer-social-link" }}><AiFillInstagram /></IconContext.Provider></a>
-      <a target="_blank" rel="noreferrer" aria-label="LinkedIn" href="https://www.facebook.com/SomosHospitality"><IconContext.Provider value={{ className: "footer-social-link" }}><AiFillLinkedin /></IconContext.Provider></a>
+      <a target="_blank" rel="noreferrer" aria-label="Instagram" href="https://www.instagram.com/somoshospitality/"><IconContext.Provider value={{ className: "footer-social-link" }}><AiFillInstagram /></IconContext.Provider></a>
     </FooterStyles>
   ) 
 }
