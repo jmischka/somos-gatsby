@@ -69,6 +69,7 @@ span {
 
 div.section-imagebox {
   position: absolute;
+  display: block;
   margin: 0 0 0 0;
   left: calc((100% / 12) * 8.5);
   top: 50%;
@@ -76,16 +77,13 @@ div.section-imagebox {
   transform: translateY(-50%);
 
   @media screen and (max-width: 1024px) {
+    display: flex;
+    flex-direction: row;
     left: calc((100% / 12) * 1);
     top: auto;
     bottom: 0;
     width: calc((100% / 12) * 10);
     transform: translateY(0);
-  }
-
-  @media screen and (max-width: 700px) {
-    left: calc((100% / 12) * 1);
-    width: calc((100% / 12) * 10);
   }
 }
 
@@ -119,18 +117,6 @@ div.section-imagebox div:nth-child(2) {
     width: 33.333%;
     padding-bottom: 33.333%;
   }
-}
-
-div.section-imagebox div:nth-child(1):after,
-div.section-imagebox div:nth-child(2):after,
-div.section-imagebox div:nth-child(3):after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
 }
 `
 

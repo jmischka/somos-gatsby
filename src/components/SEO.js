@@ -24,7 +24,7 @@ export default function SEO() {
           <title>{data.allSite.nodes[0].siteMetadata.title}</title>
           <meta name="description" content={data.allSite.nodes[0].siteMetadata.description} />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon-2.ico" />
           
           <meta property="og:type" content="website" />
           <meta property="og:title" content={data.allSite.nodes[0].siteMetadata.title} />
